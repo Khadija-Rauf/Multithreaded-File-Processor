@@ -10,7 +10,7 @@ public class FileChunker {
         List<Chunk> chunks = new ArrayList<>();
         long fileSize = file.length();
         long chunkSize = fileSize / Chunks;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < Chunks; i++) {
             final long start = i * chunkSize;
             final long end = (i == Chunks - 1) ? fileSize : (start + chunkSize);
             chunks.add(new Chunk(start, end));
